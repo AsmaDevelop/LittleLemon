@@ -15,6 +15,7 @@ def home(request):
     return render(request, 'home.html')
 
 class MenuItemView(generics.ListCreateAPIView):
+    #comment permission_classes for test_views
     permission_classes = [IsAuthenticated]
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
